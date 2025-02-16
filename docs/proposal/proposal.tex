@@ -2,6 +2,23 @@
 \settopmatter{printacmref=false, printfolios=false}
 \renewcommand\footnotetextcopyrightpermission[1]{} 
 \pagestyle{plain} 
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10002950.10003624.10003633.10010917</concept_id>
+       <concept_desc>Mathematics of computing~Graph algorithms</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10002950.10003624.10003633.10003642</concept_id>
+       <concept_desc>Mathematics of computing~Matchings and factors</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+ </ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Mathematics of computing~Graph algorithms}
+\ccsdesc[500]{Mathematics of computing~Matchings and factors}
 
 \begin{document}
 
@@ -18,7 +35,7 @@
 
 
 \begin{abstract}
-	Edmonds' Matching Algorithm (also known as Edmonds' Blossom Algorithm) \cite{Edmonds1965} is a classic algorithm to efficiently find a maximum matching in a graph by iteratively finding augmenting path and \textit{shrinking} odd cycles as needed. The algorithm is of historic interest as it was the first algorithm to perform this operation in polynomial time. Additionally, its linear programming description was a part of Jack Edmonds' major breakthrough in combinatorial optimization \cite{Edmonds1965MA}.
+	Edmonds' Matching Algorithm (also known as Edmonds' Blossom Algorithm) \cite{Edmonds1965} is a classic algorithm to efficiently find a maximum matching in a graph by iteratively finding augmenting paths and \textit{shrinking} odd cycles as needed. The algorithm is of historic interest as it was the first algorithm to perform this operation in polynomial time. Additionally, its linear programming description was a part of Jack Edmonds' major breakthrough in combinatorial optimization \cite{Edmonds1965MA}.
 	The key goal for this project is to have a functional implementation (description) of the algorithm in Rocq Prover followed by formally proving the correctness and termination of the algorithm for simple unweighted graphs. The major tasks lies in proving the \textit{preservation} of the augmenting paths when shrinking the odd cycles. This will require a considerable work proving results regarding graph minors.
 \end{abstract}
 
@@ -47,7 +64,7 @@ To start with, the intended functionality are to be built on top of the current 
 	\item Use these results show that the algorithm terminates and yields a maximum matching.
 \end{enumerate}
 
-This list of functionalities are preliminary and will be descriptive and concrete as the project proceeds.
+This list of functionalities are preliminary and will be more descriptive and concrete as the project proceeds.
 
 \section{Roadmap}
 
