@@ -18,17 +18,25 @@
 
 
 \begin{abstract}
-	Edmonds' Matching Algorithm (also known as Edmonds' Blossom Algorithm) \cite{Edmonds1965} is a classic algorithm to efficiently find a maximum matching in graph by iteratively finding augmenting path and \textit{shrinking} odd cycles as needed. The algorithm is of historic interest as it was the first algorithm to perform this operation in polynomial time. Additionally, its linear programming description was a part of Jack Edmonds' major breakthrough in combinatorial optimization \cite{Edmonds1965MA}.
-	The key goal for this project is to have a functional implementation (description) of the algorithm in Rocq Prover followed by formally proving the correctness and termination of the algorithm for simple unweighted graphs. The major tasks lies in proving the \textit{preservation} of the augmenting paths when shrinking the odd cycles.
+	Edmonds' Matching Algorithm (also known as Edmonds' Blossom Algorithm) \cite{Edmonds1965} is a classic algorithm to efficiently find a maximum matching in a graph by iteratively finding augmenting path and \textit{shrinking} odd cycles as needed. The algorithm is of historic interest as it was the first algorithm to perform this operation in polynomial time. Additionally, its linear programming description was a part of Jack Edmonds' major breakthrough in combinatorial optimization \cite{Edmonds1965MA}.
+	The key goal for this project is to have a functional implementation (description) of the algorithm in Rocq Prover followed by formally proving the correctness and termination of the algorithm for simple unweighted graphs. The major tasks lies in proving the \textit{preservation} of the augmenting paths when shrinking the odd cycles. This will require a considerable work proving results regarding graph minors.
 \end{abstract}
 
 
 \received{16 February 2025}
 \maketitle
 
-\section{Functionalities}
-
 \section{Description}
+
+A matching for a graph $G=(V,E)$ is a set of edges $M$ with the property that every vertex in the graph is only incident with at most one edge in $M$. Matchings can be used to model various problems in different fields of computer science \cite{Bunke2000}. A maximum matching for $G$ is a matching which has the largest possible number of edges. 
+
+Berge's Theorem provides a useful characterization of maximum matchings based on the concept of augmenting paths \cite{Berge1957}. For a matching $M$, an $M$-augmenting path is a path that starts from an unmatched vertex, alternates between edges in $M$ and edges not in $M$ and ends on another unmatched vertex. One can easily observe that the existence of such path will show that $M$ is not maximum as the symmetric difference of the path with $M$ yields a larger matching. Berge's Theorem states that a matching is maximum if and only if no augmenting path exists.
+
+The idea of an algorithm to use this fact to start from an empty matching and iteratively find augmenting paths until there are non left seems intuitive, efficient and easy to prove. However, for a general graph, such algorithm will have difficulties dealing with odd cycles. The idea of Edmonds' Algorithm is use to \textit{shrink} such odd cycles by contracting the edges. 
+
+It hence follows that the difficulty in proving the correctness and termination of Edmonds' Algorithm lies in proving that an augmenting path is preserved under the contraction of odd cycles, and so are the number of remaining augmenting paths. By proving such results in addition to the machinery needed to define the needed definitions and formally implement the algorithm, I plan to prove the algorithm in Rocq Prover.
+
+\section{Functionalities}
 
 
 \section{Roadmap}
