@@ -38,8 +38,20 @@ It hence follows that the difficulty in proving the correctness and termination 
 
 \section{Functionalities}
 
+To start with, the intended functionality are to be built on top of the current graph theory infrastructure in Rocq Prover and especially the definitions of graph minors \cite{CoqGraph}. Given these definitions, it remains to:
+\begin{enumerate}
+	\item Formally define the concept of maximum matching using the Berge Theorem.
+	\item Formally state and implement the algorithm.
+	\item Formally define the concept of shrunken cycles.
+	\item Prove the \textit{preservation} of augmenting paths under contraction of odd cycles.
+	\item Use these results show that the algorithm terminates and yields a maximum matching.
+\end{enumerate}
+
+This list of functionalities are preliminary and will be descriptive and concrete as the project proceeds.
 
 \section{Roadmap}
+
+
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{proposal}{}
