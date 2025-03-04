@@ -1,0 +1,10 @@
+name = "edmonds-blossom"
+version = "0.1.0"
+defaultTargets = ["edmonds-blossom"]
+
+[[lean_lib]]
+name = "EdmondsBlossom"
+
+[[lean_exe]]
+name = "edmonds-blossom"
+root = "Main"
